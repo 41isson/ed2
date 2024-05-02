@@ -46,6 +46,14 @@ class Pilha{
         }
         }
 
+        void pilhaVazia(){
+            if(topo == nullptr){
+                cout << "Pilha vazia";
+            }
+            cout << "Pilha não vazia";
+        }
+
+
         void topoDaPilha(){
         
         if(topo != nullptr){
