@@ -28,21 +28,21 @@ using namespace std;
     b = temp;
     }
     
-    void selectionSort(std::vector<int> &vetor){
-        int n = vetor.size();
-        bool trocou = true;
-        while (trocou) {
-            trocou = false;
-            for (int i = 0; i < n - 1; i++) {
-                if (vetor[i] > vetor[i + 1]) {
-                    // Movendo os elementos manualmente
-                    trocar(vetor[i], vetor[i + 1]);
-                    trocou = true;
-                }
+    void selectionSort(std::vector<int>& vetor) {
+    int n = vetor.size();
+    for (int i = 0; i < n - 1; ++i) {
+        // Encontra o menor elemento na sublista não ordenada
+        int min_idx = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (vetor[j] < vetor[min_idx]) {
+                min_idx = j;
             }
-            n--;
         }
+        // Troca o menor elemento encontrado com o primeiro elemento da sublista não ordenada
+        trocar(vetor[i], vetor[min_idx]);
     }
+}
+
 
 
     vector<int> merge(vector<int>& esquerda, vector<int>& direita) {
